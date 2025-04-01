@@ -18,9 +18,14 @@ public class GreetService {
         } else  {
             return new Greet("Good Morning!", GreetType.CASUAL);
         }
+    }
 
-
-
+    public Greet greetPersonal(String name) {
+        if (name == null || name.isEmpty()) {
+            return new Greet("Hello stranger!", GreetType.CASUAL);
+        }
+        Greet greet = new Greet(" Hello " + name + "!", GreetType.CASUAL);
+        return greet;
     }
 
 }

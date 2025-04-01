@@ -38,4 +38,15 @@ public class CoffeeService {
     public List<Coffee> getAllCoffees() {
         return coffeeList;
     }
+
+
+    public List<Coffee> getAllCoffeeByOrigin(String origin) {
+        List<Coffee> filteredCoffees = new ArrayList<>();
+        for (int i = 0; i < coffeeList.size(); i++) {
+            if (coffeeList.get(i).getOrigin().equalsIgnoreCase(origin)) {
+                filteredCoffees.add(coffeeList.get(i));
+            }
+        }
+        return filteredCoffees;
+    }
 }
